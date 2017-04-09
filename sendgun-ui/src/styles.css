@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+ body { background-color: #eee}    
+    .ng-valid.ng-dirty:not(form) {
+      border-left: 5px solid green;
+      /* green */
+    }
+    
+    .ng-invalid.ng-dirty:not(form) {
+      border: solid 1px red;
+      border-left: 5px solid red;
+      /* red */
+    }

@@ -1,0 +1,44 @@
+{
+  "name": "sendgun-api",
+  "version": "1.0.0",
+  "description": "the server api for sendgun",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "NODE_PATH=./dist node -r dotenv/config dist/main.js ",
+    "build": "NODE_PATH=./src babel src --out-dir dist --source-maps --copy-files",
+    "build.watch": "NODE_PATH=./src nodemon src --exec \"node -r dotenv/config devStart.js\"",
+    "pretest": "npm run clean",
+    "test": "NODE_PATH=./src tape -r babel-register -r dotenv/config src/**/*-test.js | tap-spec",
+    "pretest.watch": "npm run clean",
+    "test.watch": "NODE_PATH=./src nodemon src --exec \"npm test -s\""
+  },
+  "author": "Mark Kemper",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.3.2",
+    "babel-register": "^6.24.0",
+    "node-mocks-http": "^1.6.1",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "ajv": "^4.11.5",
+    "axios": "^0.16.0",
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "qs": "^6.4.0",
+    "source-map-support": "^0.4.14",
+    "url-search-params": "^0.7.0"
+  }
+}

@@ -1,0 +1,57 @@
+{
+    "definitions": {
+        "email": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "minLength": 1
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email"
+            ]
+        }
+    },
+    "properties": {
+        "to": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/email"
+            }
+        },
+        "cc": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/email"
+            }
+        },
+        "bcc": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/email"
+            }
+        },
+        "from": {
+            "$ref": "#/definitions/email"
+        },
+        "subject": {
+            "type": "string",
+            "minLength": 1
+        },
+        "body": {
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "required": [
+        "to",
+        "from",
+        "body",
+        "subject"
+    ]
+}
