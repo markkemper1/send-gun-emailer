@@ -52,5 +52,5 @@ npm install
 npm start     # N.B runs ng serve with proxy config
 ```
 
-  * service should be running on http://localhost:4600  (should return the ui!)
+  * service should be running on http://localhost:4200  (should return the ui!)
 
