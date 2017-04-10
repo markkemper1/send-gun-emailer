@@ -5,7 +5,7 @@ Switches between Sendgrid &amp; Mailgun email services, if one of the services g
 
 ### Running Locally ###
 
-I'll assumed you have cloned and cd'd into the directory for the repository. The project is broken into two parts. The api service and the ui front end.They could be moved into seperate repositories if necessary.
+I'll assumed you have cloned and cd'd into the directory for the repository. The project is broken into two parts. The api service and the ui front end. They could be moved into seperate repositories if necessary.
 
 The api service must be running for the UI to work... The api service runs on port 3000 by default and the UI on port 4200.
 
