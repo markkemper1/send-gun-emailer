@@ -10,7 +10,7 @@ I'll assumed you have cloned and cd'd into the directory for the repository. The
 The api service must be running for the UI to work... The api service runs on port 3000 by default and the UI on port 4200.
 
 ### Prerequisite ###
-* Better have at least node 6.x installed, tested with 6.10
+* Better have at least node 6.9 installed, tested with 6.10 . npm > 3
 
 #### Running the api service
 
