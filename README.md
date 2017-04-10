@@ -18,7 +18,7 @@ I'll assumed you have cloned and cd'd into the directory for the repository.
 cd sendgun-api
 ```
 
-  * create an `.env` file containing the secrets for accessing MailGun & SendGrid
+  * create an .env file (`touch .env`) containing the secrets for accessing MailGun & SendGrid
     
 ```
 SENDGRID_API_KEY=XXXXXX
