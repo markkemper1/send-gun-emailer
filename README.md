@@ -29,7 +29,6 @@ MAILGUN_API_KEY=XXXXXXX
   * install the dependencies, build and start the service
     
 ```
-cd sendgun-api
 npm install
 npm run build && npm start
 ```
@@ -47,7 +46,6 @@ cd sendgun-ui
   * install the dependencies, build and start the service
     
 ```
-cd sendgun-ui
 npm install
 npm start     # N.B runs ng server with proxy config
 ```
