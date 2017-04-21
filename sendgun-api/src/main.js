@@ -22,3 +22,9 @@ const router = new Router({messagesController});
 const server = new Server({router});
 
 server.start(process.env.PORT || 3000);
+
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+    server.close()
+        .then(process.exit);
+});
