@@ -43,10 +43,10 @@ const transformMessage = (from, to, cc, bcc, subject, body) => {
     };
 
     if (cc && cc.length > 0)
-        result.cc = cc;
+        result.personalizations[0].cc = cc;
 
     if (bcc && bcc.length > 0)
-        result.bcc = bcc;
+        result.personalizations[0].bcc = bcc;
 
     return result;
 

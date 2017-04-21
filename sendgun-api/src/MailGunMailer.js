@@ -33,9 +33,6 @@ export default class {
 
         if(cc && cc.length > 0) request.cc = mapEmails(cc)
         if(bcc  && bcc.length > 0) request.bcc = mapEmails(bcc)
-        
-        if(request.cc) delete request.cc;
-        if(request.bcc) delete request.bcc;
 
         return this.client.post('/messages', qs.stringify(request), {
             headers: {
