@@ -12,7 +12,8 @@ tape('Router:configure should attach messagesController to post /api/email', t =
         post: (path, handler) => {
             calledWith.path = path;
             calledWith.handler = handler;
-        }
+        },
+        get: () => {}
     };
 
     router.configure(app)
