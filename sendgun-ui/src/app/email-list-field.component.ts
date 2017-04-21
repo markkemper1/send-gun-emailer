@@ -42,7 +42,7 @@ export default class {
 
   get model() : Array<EmailParseResult> {
     let result = this.emails
-                     .filter(x=>x && x.length > 0)
+                     .filter(x=>x && x.address && x.address.length > 0)
                      .map(x => emailParser(x.address))
                     ;
     

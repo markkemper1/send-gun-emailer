@@ -11,7 +11,7 @@ import emailParser, {EmailParseResult} from './emailParser'
     label { font-size: 160%;}
   `],
   template: `
- <form method="POST" action="javascript: void(0)" (ngSubmit)="onSubmit()">
+ <form method="POST" action="javascript: void(0)" >
  <fieldset [disabled]='submitting'>
 
   <div class="alert alert-success" role="alert" [hidden]="!(flashMessage)">
@@ -60,7 +60,7 @@ import emailParser, {EmailParseResult} from './emailParser'
   </div>
 
   <div class='text-right'>
-    <button type="submit" class="btn btn-primary btn-lg" >Send</button>
+    <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg" >Send</button>
   </div>
   </fieldset>
 </form>
