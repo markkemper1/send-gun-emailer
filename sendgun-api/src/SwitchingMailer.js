@@ -14,11 +14,11 @@ export default class {
     }
 
     send(message) {
-        return sendUsingMailer.bind(this)(0, this.mailers, message)
+        return sendUsingMailer.bind(this)(0, message)
     }
 }
 
-function sendUsingMailer(tries, message) {
+function sendUsingMailer(attempts, message) {
     
     return this.mailers[this.currentMailerIndex].send(message)
         .catch(x => {
@@ -28,8 +28,8 @@ function sendUsingMailer(tries, message) {
             //cycle to next mailer;
             this.currentMailerIndex = (this.currentMailerIndex + 1) % this.mailers.length;
 
-            if ( (tries + 1) < this.mailers.length)
-                return sendUsingMailer.bind(this)(tries + 1, message)
+            if ( (attempts + 1) < this.mailers.length)
+                return sendUsingMailer.bind(this)(attempts + 1, message)
 
             throw new Error('Failed to send message on all mailers')
         });

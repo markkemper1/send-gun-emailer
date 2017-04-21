@@ -4,16 +4,32 @@ import SwitchingMailer from 'SwitchingMailer'
 const FAIL = 1
 let sendCount = 0;
 let failCount = 0;
+let messageSent = null;
 function createSender(fail) {
     return {
         send: function (m) {
             if (!fail) sendCount += 1;
             if (fail) failCount += 1;
             console.log(`Sending message... ${fail ? 'FAILED' : 'success'}`);
+            messageSent = m;
             return fail ? Promise.reject("fail") : Promise.resolve("OK")
         }
     }
 }
+
+tape('SwitchingMailer:should pass the message onto the mailer', t => {
+
+    var target = new SwitchingMailer({
+        mailers: [createSender()]
+    });
+    const messagePassed = { to: 'me'};
+
+    target.send(messagePassed)
+        .then(x => {
+            t.equal(messageSent, messagePassed);
+            t.end();
+        })
+})
 
 tape('SwitchingMailer:send only to first mailer if no errors', t => {
     sendCount = 0;
